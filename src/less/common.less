@@ -1,0 +1,50 @@
+@import "variables";
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: @color-body-bg;
+  padding: 0;
+  margin: 0;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+button {
+  font-family: inherit;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 14px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: @border-radius-field;
+  padding: 6px 6px 5px;
+  border-color: @colors-field-border;
+  box-shadow: @shadow-field;
+
+  &::placeholder {
+    color: #85828b;
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  height: 26px;
+}
+
+a,
+a:hover {
+  color: @color-link;
+}

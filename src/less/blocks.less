@@ -1,0 +1,260 @@
+@import "variables";
+@import "mixins";
+
+.b-page-wrapper {
+  width: @page-wrapper-width;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.b-navbar {
+  background: @color-bar-bg;
+  border-bottom: 1px solid #c9ccd1;
+  padding: 13px 0 15px;
+
+  .b-page-wrapper {
+    .clearfix();
+  }
+
+  &__menu {
+    float: left;
+    width: 70%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    &-item {
+      display: inline-block;
+      margin-right: 21px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &_current {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__user {
+    float: right;
+    width: 30%;
+    text-align: right;
+    padding-top: 3px;
+
+    &-name {
+      margin-right: 10px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+
+    &_log-out {
+      &,
+      &:hover {
+        color: #787570;
+      }
+    }
+  }
+}
+
+.b-controls-bar {
+  position: relative;
+  background: @color-bar-bg;
+  border-bottom: 1px solid #ccccce;
+  padding: 16px 0;
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    z-index: -1;
+
+    box-shadow: @shadow-bar;
+  }
+
+  .b-page-wrapper {
+    .clearfix();
+  }
+
+  &__main {
+    float: left;
+    width: 50%;
+    padding-left: 14px;
+  }
+
+  &__toggle-all {
+    margin-right: 13px;
+    position: relative;
+    top: -1px;
+  }
+
+  &__search {
+    float: right;
+    width: 171px;
+  }
+}
+
+.b-btn {
+  display: inline-block;
+  padding: 4px 7px 5px 26px;
+  height: 26px;
+  border-radius: @border-radius-button;
+  color: #65666b;
+  border-color: @colors-button-border;
+  border-style: solid;
+  border-width: 1px;
+  text-decoration: none;
+  font-size: 12px;
+  cursor: default;
+  background: #eff0f4;
+
+  &,
+  &:hover {
+    color: #65666b;
+    text-decoration: none;
+  }
+
+  & + & {
+    margin-left: 12px;
+  }
+
+  &_add {
+    background:
+      url("../images/icon_plus.png") no-repeat 10px 7px,
+      @gradient-button;
+  }
+
+  &_edit {
+    background:
+      url("../images/icon_pencil.png") no-repeat 10px 7px,
+      @gradient-button;
+  }
+
+  &_delete {
+    background:
+      url("../images/icon_trash.png") no-repeat 10px 7px,
+      @gradient-button;
+  }
+
+  &_groups {
+    background:
+      url("../images/icon_group.png") no-repeat 9px center,
+      @gradient-button;
+  }
+
+  &_close {
+    border-color: @colors-button-danger-border;
+    background:
+      url("../images/icon_cross.png") no-repeat 8px 8px,
+      @gradient-button-danger;
+  }
+}
+
+.b-payers {
+  &__header {
+    padding-left: 47px;
+    font-size: 0;
+  }
+
+  &__column {
+    display: inline-block;
+    font-size: 13px;
+    vertical-align: top;
+    padding: 16px 0 13px;
+
+    &_checkbox {
+      width: 45px;
+      padding-left: 13px;
+    }
+
+    &_payer {
+      width: 364px;
+    }
+
+    &_email {
+      width: 229px;
+    }
+
+    &_phone {
+      width: 150px;
+    }
+
+    &_groups {
+      width: 210px;
+      font-size: 12px;
+      color: #a39a93;
+    }
+  }
+
+  &__header > &__column {
+    color: #a39a93;
+    font-size: 12px;
+    padding: 15px 0 14px;
+  }
+
+  &__button {
+    margin-bottom: 10px;
+  }
+
+  &__item {
+    position: relative;
+    font-size: 0;
+    border: 1px solid transparent;
+    border-top-color: #bdbcb8;
+
+    &:last-child {
+      border-bottom-color: #bdbcb8;
+    }
+
+    &-field {
+      .b-payers__column_payer & {
+        margin-top: 2px;
+      }
+
+      .b-payers__column_email & {
+        margin-top: -2px;
+      }
+
+      &-name {
+        font-size: 12px;
+        color: #a39a93;
+      }
+    }
+
+    &-email {
+      display: inline-block;
+      max-width: 140px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &-controls {
+      margin-left: 18px;
+    }
+
+    &-close {
+      content: "";
+      position: absolute;
+      top: -13px;
+      right: -14px;
+      width: 26px;
+      height: 26px;
+      padding: 0;
+    }
+
+    &_expanded {
+      background-color: @color-card-bg;
+      border-color: #bfbab6 #c2bab7 #c1bab4 #bebdb9;
+    }
+
+    &_expanded + & {
+      border-top: none;
+    }
+  }
+}
