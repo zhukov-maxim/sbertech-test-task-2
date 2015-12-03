@@ -15,13 +15,16 @@ body {
   font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
   font-size: 13px;
   line-height: 1.4;
+  min-width: @page-wrapper-width;
 }
 
 button {
   font-family: inherit;
 }
 
-input,
+input[type="text"],
+input[type="email"],
+input[type="password"],
 textarea {
   font-family: inherit;
   font-size: 12px;
@@ -31,17 +34,17 @@ textarea {
   border-radius: @border-radius-field;
   padding: 6px 6px 5px;
   border-color: @colors-field-border;
+  height: 26px;
   box-shadow: @shadow-field;
 
   &::placeholder {
     color: #85828b;
+    opacity: 1;
   }
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  height: 26px;
+textarea {
+  height: auto;
 }
 
 a,

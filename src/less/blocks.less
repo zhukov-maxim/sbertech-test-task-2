@@ -8,12 +8,28 @@
 }
 
 .b-navbar {
+  position: relative;
   background: @color-bar-bg;
+  background: @gradient-navbar-vertical;
   border-bottom: 1px solid #c9ccd1;
   padding: 13px 0 15px;
 
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: @gradient-navbar-diagonal;
+    z-index: 0;
+  }
+
   .b-page-wrapper {
+    position: relative;
     .clearfix();
+
+    z-index: 1;
   }
 
   &__menu {
@@ -89,7 +105,7 @@
   }
 
   &__toggle-all {
-    margin-right: 13px;
+    margin-right: 16px;
     position: relative;
     top: -1px;
   }
@@ -125,24 +141,28 @@
   }
 
   &_add {
+    background: #eff0f4 url("../images/icon_plus.png") no-repeat 9px center;
     background:
-      url("../images/icon_plus.png") no-repeat 10px 7px,
+      url("../images/icon_plus.png") no-repeat 10px 6px,
       @gradient-button;
   }
 
   &_edit {
+    background: #eff0f4 url("../images/icon_pencil.png") no-repeat 9px center;
     background:
       url("../images/icon_pencil.png") no-repeat 10px 7px,
       @gradient-button;
   }
 
   &_delete {
+    background: #eff0f4 url("../images/icon_trash.png") no-repeat 9px center;
     background:
       url("../images/icon_trash.png") no-repeat 10px 7px,
       @gradient-button;
   }
 
   &_groups {
+    background: #eff0f4 url("../images/icon_group.png") no-repeat 9px center;
     background:
       url("../images/icon_group.png") no-repeat 9px center,
       @gradient-button;
@@ -150,6 +170,7 @@
 
   &_close {
     border-color: @colors-button-danger-border;
+    background: #f78f90 url("../images/icon_cross.png") no-repeat 8px 8px;
     background:
       url("../images/icon_cross.png") no-repeat 8px 8px,
       @gradient-button-danger;
@@ -212,13 +233,30 @@
       border-bottom-color: #bdbcb8;
     }
 
+    .b-customers__column {
+      padding-bottom: 12px;
+
+      &_customer {
+        padding-left: 1px;
+      }
+
+      input {
+        position: relative;
+        top: -1px;
+      }
+    }
+
+    .b-customers__column_email {
+      padding-bottom: 7px;
+    }
+
     &-field {
       .b-customers__column_customer & {
         margin-top: 2px;
       }
 
       .b-customers__column_email & {
-        margin-top: -2px;
+        margin-top: -3px;
       }
 
       &-name {
@@ -258,3 +296,8 @@
     }
   }
 }
+
+.b-customers-editor {
+  margin-bottom: 20px;
+}
+
